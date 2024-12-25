@@ -33,7 +33,7 @@ An account is created adding in the Spending Private Key and registering an Alia
 
 In order to store the keys securely so they can be used by the wallet to decrypt data and sign transactions, we use the browsers password manager. This can either be the browsers built in password manager or a third party like 1Passsword.
 
-Most password managers store passwords encrypted, however for additional security we further encrypt the password with a symetric encryption key derived from the users password and a random salt.
+Most password managers store passwords encrypted, however for additional security we further encrypt the password with a symmetric encryption key derived from the users password and a random salt.
 
 ### Step 1. Derive an encryption key.
 
@@ -57,7 +57,7 @@ Password Manager Entry = concact(Cipher, Random Salt)
 
 ## Account recovery
 
-To ensure the user can still access their account under the above assumptions, a recovery kit is required. This kit contains infromation needed to recover the Account Private Key and regain spending access on the account.
+To ensure the user can still access their account under the above assumptions, a recovery kit is required. This kit contains information needed to recover the Account Private Key and regain spending access on the account.
 
 ## Recovering the Spending Private Key
 
@@ -117,7 +117,7 @@ Important this information can be used to recover you Aztec Account.
 
 ## Scenarios
 
-### Lost device / no access to password manager / can’t remeber user password.
+### Lost device / no access to password manager / can’t remember user password.
 
 Here the user must posses their recovery kit and have access to their Ethereum Private Key. If they posses this, they can do the following.
 
@@ -140,10 +140,10 @@ It may be worth considering encrypting the Spending `Private Key` and `Account P
 
 Without the `Recovery Kit`, the attacker can’t use this in any attack. However there is a phising attack here that the attacker could trick the user into “recovering” on an insecure website.
 
-To combat this, the recovery kit should explictly detail the correct URL to recover via e.g `wallet.aztec.network/recovery`.
+To combat this, the recovery kit should explicitly detail the correct URL to recover via e.g `wallet.aztec.network/recovery`.
 
 ### User loses access to their Ethereum Private Key.
 
-If the user does not have access to their Ethereum Private Key, their recovery kit is usless. The UI can encourage them to periodical prove they have access to this key to mitigate against this. Should they fail that test, a new recovery kit can be generated.
+If the user does not have access to their Ethereum Private Key, their recovery kit is useless. The UI can encourage them to periodical prove they have access to this key to mitigate against this. Should they fail that test, a new recovery kit can be generated.
 
-So long as an attacker does not have access to the `Old Ethereum Private Key` this should be secure. If their is a chance an attacker has access to the `Old Ethereum Private Key` and the old recovery kit can’t be guranteed to be destroyed, security concious users should migrate to a new account.
+So long as an attacker does not have access to the `Old Ethereum Private Key` this should be secure. If their is a chance an attacker has access to the `Old Ethereum Private Key` and the old recovery kit can’t be guranteed to be destroyed, security conscious users should migrate to a new account.
